@@ -1,6 +1,6 @@
 # Lab 5
 
-If you have distrobox, create the container using:
+If you are using distrobox, create the container using:
 ```bash
 distrobox assemble create
 ```
@@ -26,7 +26,10 @@ source ~/.bashrc
 
 Ignore `source not found` error. It won't matter since you will source after.
 
-## export_urdf.sh fixes.
+
+## Web Interface Control
+
+### export_urdf.sh fixes.
 
 Patch the `cp` line for `controller_calibration_default.yaml`:
 
@@ -34,9 +37,7 @@ Patch the `cp` line for `controller_calibration_default.yaml`:
 cp `ros2 pkg prefix stretch_core`/share/stretch_core/config/controller_calibration_head_factory_default.yaml ./exported_urdf/
 ```
 
-## Web Interface Control
-
-Copy/rename the cert files.
+### Copy/rename the cert files.
 
 ```bash
 cd ~/ament_ws/src/stretch_web_teleop/certificates

@@ -16,7 +16,7 @@ distrobox enter --root lab5
 curl -sL https://raw.githubusercontent.com/hello-robot/stretch_ros2/refs/heads/humble/stretch_simulation/stretch_create_ament_workspace.sh > /tmp/stretch_create_ament_workspace.sh && bash /tmp/stretch_create_ament_workspace.sh
 ```
 
-After adding the workspace source to `.bashrc`, source it:
+To make your life easier, add sourcing the underlay and overlay to `~/.bashrc`. After adding the workspace source to `.bashrc`, source it:
 
 ```bash
 source ~/.bashrc
@@ -24,14 +24,14 @@ source ~/.bashrc
 
 ## Set up Mujoco simulation fixes.
 
-Ignore `source not found` error. It won't matter since you will source after.
+Ignore the `source not found` error. It won't matter since you will source manually after the setup script ends.
 
 
 ## Web Interface Control
 
 ### export_urdf.sh fixes.
 
-Patch the `cp` line for `controller_calibration_default.yaml`:
+Since the demo uses an uncalibrated model, patch the `cp` line for `controller_calibration_default.yaml` to use the factory-calibrated one:
 
 ```bash
 cp `ros2 pkg prefix stretch_core`/share/stretch_core/config/controller_calibration_head_factory_default.yaml ./exported_urdf/

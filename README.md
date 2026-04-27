@@ -7,7 +7,7 @@ distrobox assemble create
 
 Then enter using:
 ```bash
-distrobox enter --root sim
+distrobox enter sim
 ```
 
 ## Don't run ROS 2 workspace setup with `sudo`.
